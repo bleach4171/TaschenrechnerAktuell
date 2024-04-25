@@ -4,6 +4,7 @@ namespace Mathe
 {
     class Taschenrechner
     {
+        // Methoden für verschiedene mathematische Operationen
         public double Addition(double x, double y) { return x + y; }
         public double Subtraktion(double x, double y) { return x - y; }
         public double Multiplikation(double x, double y) { return x * y; }
@@ -17,10 +18,11 @@ namespace Mathe
         public double WurzelZiehen(double x) { return Math.Sqrt(x); }
         public double Logarithmus(double x) { return Math.Log(x); }
 
+        // Methode zur Berechnung der Fakultät einer Zahl
         public double Fakultaet(double x)
         {
             double result = 1;
-            for (double i = x; i > 0; i--) { result *= i; }
+            for (double i = x; i > 0; i--) { result *= i; } // Berechnung/Formel der Fakultät
             return result;
         }
     }
@@ -29,25 +31,26 @@ namespace Mathe
     {
         static void Main(string[] args)
         {
-            // Instanziierung der Taschenrechner-Klasse
+            // Taschenrechner-Klasse wird erstellt
             Taschenrechner t = new Taschenrechner();
 
             while (true)
             {
-                Console.Clear(); // damit Konsole wieder sauber ist
+                Console.Clear(); // Löscht die Konsole, damit sie wieder sauber ist
                 // Benutzereingabe für die Zahlen
                 Console.Write("Geben Sie die erste Zahl ein: ");
                 double zahl1 = Convert.ToDouble(Console.ReadLine());
 
                 char op;
 
+                // Benutzereingabe für die Auswahl der Operation
                 Console.WriteLine("Wählen sie eine Operation aus: (+ für Addition) (- für Subtraktion) (* für Multiplikation) (/ für Division) \n (f für Fakultät) (s für Sinus) (c für Cosinus) (t für Tangens) (p für Potenzieren) (w für Wurzelziehen) \n (l für Logarithmus)");
 
                 op = Convert.ToChar(Console.ReadLine());
 
 
-                // Abchecken welche Operation eingegeben wurde
-                // Das die zweite Zahl nicht gebraucht wird, wenn man nur eine Zahl braucht, deswegen je nach Operation einzelnd ersetellt
+                // Abchecken welche Operation eingegeben/gewählt wurde
+                // Das die zweite Zahl nicht gebraucht wird, wenn man nur eine Zahl braucht (zB: Wurzelziehen oder Cosinus...), deswegen je nach Operation einzelnd ersetellt
                 switch (op)
                 {
                     case '+':
